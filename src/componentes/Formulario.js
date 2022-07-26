@@ -1,6 +1,8 @@
 //En App.js 
 import { useState } from 'react';
+import App from '../App';
 import Tabla from './Tabla';
+
 
 function Formulario() {
 
@@ -26,7 +28,7 @@ function Formulario() {
             descripcion: desc,
             precio: precio,
             cantidad: cantidad,
-            total : total,
+            total: total,
             descuento: totalDescuento,
             resultado: totalApagar
         }
@@ -40,48 +42,47 @@ function Formulario() {
     }
 
     return (
-        <>
-            <div>
-                <div className="container">
+        <div className='container'>
+            <div className='row'>
+                <div className="col-xs-12 col-sm-6 col-xl-3" >
                     <form onSubmit={agregar}>
-
                         <h2>Agregar producto</h2>
                         <div className="row">
-                            <div className="col-xs-12 col-sm-6">
+                            <div className="">
                                 Código
-                                <input className='form-control' type="numeric" name="txt_codigo" /><br />
+                                <input className='form-control' type="numeric" name="txt_codigo" placeholder="codigo producto" required /><br />
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-xs-12 col-sm-6">
+                            <div className="">
                                 Nombre
-                                <input className='form-control' type="text" name='txt_nombre' /><br />
+                                <input className='form-control' type="text" name='txt_nombre' placeholder="Nombre producto" required /><br />
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-xs-12 col-sm-6">
+                            <div className="">
                                 Descripcion
-                                <input className='form-control' type="text" name="txt_descripcion" /><br />
+                                <input className='form-control' type="text" name="txt_descripcion" placeholder="tipo de producto" required /><br />
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-xs-12 col-sm-6">
+                            <div className="">
                                 Precio
-                                <input className='form-control' type="numeric" name="txt_precio" /><br />
+                                <input className='form-control' type="numeric" name="txt_precio" placeholder="ingrese precio" required /><br />
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-xs-12 col-sm-6">
+                            <div className="">
                                 Cantidad
-                                <input className='form-control' type="numeric" name="txt_cantidad" /><br />
+                                <input className='form-control' type="numeric" name="txt_cantidad" placeholder="ingrese cantidad" required /><br />
                             </div>
                         </div>
-                        <input className='btn btn-primary' type="submit" value="agregar" />
+                        <input className='btn btn-primary' type="submit" value="agregar producto" />
                     </form>
                 </div>
+                <Tabla productos={productos} />
             </div>
-            <Tabla productos={productos} />
-        </>
+        </div>
     );
 }
 export default Formulario;

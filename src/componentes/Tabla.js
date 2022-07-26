@@ -1,7 +1,7 @@
 function Tabla({ productos = [] }) {
     return (
-        <div>
-            <table>
+        <div className="col-xs-12 col-sm-6 col-xl-9">
+            <table className="table table-striped">
                 <thead><tr><th>Código</th><th>Nombre</th><th>Descripcion</th><th>Precio</th><th>Cantidad</th><th>Total</th><th>Total descuento</th></tr></thead>
                 <tbody>
                     {productos.map(art => {
